@@ -11,15 +11,20 @@
     <label>Type:</label>
     <input id="duckType" />
     <button onclick="addTheDuck()">Add the duck</button>
-
+    <label>Upload Image:</label>
+    <input type="file" id="duckImage" accept="image/*" />
+    <br>
     <script>
         function addTheDuck() {
            let duckIdNode = document.getElementById("duckId");
            let duckId = duckIdNode.value;
            let duckTypeNode = document.getElementById("duckType");
            let duckType = duckTypeNode.value;
-           let duck = {id: duckId, type: duckType}
+           let duckImage = duckImageNode.files[0]; 
+           let duck = {id: duckId, type: duckType};
            alert("You entered: " + JSON.stringify(duck));
+           let duckImageNode = document.getElementById("duckImage");
+           alert("The image: " + duckImageNode.files[0].name + "size: " + duckImageNode.files[0].size);
         }
     </script>
 
